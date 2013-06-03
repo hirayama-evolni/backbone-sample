@@ -11,13 +11,13 @@ class AddressesController extends AppController {
     }
 
     // GET /addresses
-    // ‘SŒ•Ô‚·
+    // å…¨ä»¶è¿”ã™
     public function index(){
-        // ‘SŒŽæ“¾
+        // å…¨ä»¶å–å¾—
         $data = $this->Address->find('all');
       
-        // arrah([0] => array('Address' => array(/*data*/))) ‚È‚Ì‚ÅA
-        // ˆêŠK‘w”²‚­
+        // arrah([0] => array('Address' => array(/*data*/))) ãªã®ã§ã€
+        // ä¸€éšŽå±¤æŠœã
         $func = function($v){
             return $v['Address'];
         };
@@ -27,32 +27,32 @@ class AddressesController extends AppController {
     }
   
     // GET /addresses/id
-    // ¡‰ñ‚ÍÈ—ª
+    // ä»Šå›žã¯çœç•¥
     public function view($id){
     }
   
     // POST /addresses
-    // ˆêŒ’Ç‰Á
+    // ä¸€ä»¶è¿½åŠ 
     public function add(){
-        // save‚É“n‚·ƒf[ƒ^ì¬
+        // saveã«æ¸¡ã™ãƒ‡ãƒ¼ã‚¿ä½œæˆ
         $data = array('Address' => 
                       array('name' => $this->request->data['name'],
                             'address' => $this->request->data['address'],
                             'tel' => $this->request->data['tel']));
       
-        // DB‚É“Š“ü
+        // DBã«æŠ•å…¥
         $this->Address->save($data);
       
         $this->returnJSON(array());
     }
   
     // PUT /addresses/id
-    // ¡‰ñ‚ÍÈ—ª
+    // ä»Šå›žã¯çœç•¥
     public function edit($id){
     }
 
     // DELETE /addresses/id
-    // ˆêŒíœ
+    // ä¸€ä»¶å‰Šé™¤
     public function delete($id){
         $this->Address->delete($id);
       

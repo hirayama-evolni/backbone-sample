@@ -1,0 +1,22 @@
+// 適当パクってきました 
+body {
+    background-color: #eee;
+}
+
+.address {
+    outline: 1px solid #aaa;
+    width: 350px;
+    height: 130px;
+    background-color: #fff;
+    float: left;
+    margin: 5px;
+
+    ul {
+        list-style-type: none;
+        margin-bottom: 0;
+    }
+    button {
+        float: right;
+        margin: 10px;
+    }
+}

@@ -8,16 +8,18 @@ window.backbone_sample.ListView = Backbone.View.extend
   # コンストラクタ
   initialize: (opt) ->
     this.collection = window.backbone_sample.Collection
-    # サーバサイドからデータを取ってくる
-    this.collection.fetch
-      reset: true
 
+  	## イベントハンドラの設定
     # resetされると(この場合データを読み込み終わると)データ表示
     this.listenTo this.collection, "reset", this.render
     # 追加されるとデータ(再)表示
     this.listenTo this.collection, "add", this.render
     # 削除されるとデータ(再)表示
     this.listenTo this.collection, "destroy", this.render
+
+    # サーバサイドからデータを取ってくる
+    this.collection.fetch
+      reset: true
 
     return
 
